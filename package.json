@@ -20,6 +20,7 @@
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
+    "pub": "pnpm run build && pnpm -r --filter=./packages/* publish",
     "start": "npm run dev",
     "test": "jest"
   },

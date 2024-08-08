@@ -7,7 +7,7 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp",
+    "build": "gulp && webpack-cli",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

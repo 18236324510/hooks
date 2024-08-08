@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkchooks_main=self.webpackChunkchooks_main||[]).push([[433],{11925:function(i,c,u){u.r(c);var s=u(75271),n=u(52676),o=function(){return console.log("cui"),(0,n.jsx)("div",{children:"cuicuicui"})};c.default=o}}]);

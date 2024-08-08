@@ -3,3 +3,48 @@ name: docs
 
 # 从工作流生成的工作流运行的名称，如果省略，则使用提交时的commit信息
 run-name: Deploy by @${{ github.actor }}
+
+on:
+    # 每当 push 到 main 分支时触发部署
+    push:
+        branches: [main]
+    # 手动触发部署
+    workflow_dispatch:
+
+    
+# 当前流程要执行的任务，可以是多个。[my_first_job]就是一个任务
+jobs:
+    my_first_job:
+        # 任务的名称，不设置则默认my_first_job
+        name: build-and-deploy
+
+        # 运行所需要的虚拟机环境
+        runs-on: ubuntu-latest
+
+        # 每个任务下的运行步骤，短横杠 - 表示一个步骤，从上至下依次执行。
+        steps:
+            # clone 该仓库的源码到工作流中
+            - name: Clone Code
+              uses: actions/checkout@v4
+              with:
+                  # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
+                  fetch-depth: 0
+                  
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  # 选择要使用的 pnpm 版本
+                  version: 8
+                  # 使用 pnpm 安装依赖
+                  run_install: true
+                  
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  # 选择要使用的 node 版本
+                  node-version: 20
+                  # 缓存 pnpm 依赖
+                  cache: pnpm
+            # 运行构建脚本
+            - name: Build dumi site
+              run: pnpm docs:build

@@ -15,4 +15,5 @@ export default defineConfig({
     ],
   },
   base: '/hooks/',
+  publicPath: '/hooks/',
 });

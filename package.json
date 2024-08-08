@@ -1,6 +1,6 @@
 {
   "name": "cyxhooks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a",
   "license": "MIT",
   "module": "dist/index.js",

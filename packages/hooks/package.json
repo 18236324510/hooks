@@ -5,7 +5,18 @@
   "keywords": [],
   "license": "ISC",
   "author": "",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "unpkg": "dist/encode-hooks.js",
+  "module": "./es/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "metadata.json",
+    "package.json",
+    "README.md"
+  ],
   "scripts": {
     "build": "gulp && webpack-cli",
     "test": "echo \"Error: no test specified\" && exit 1"

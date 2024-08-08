@@ -1,2 +1,3 @@
-module.exports = { extends: [ 'eslint-config-encode/typescript','prettier',],
+module.exports = {
+  extends: require.resolve('@umijs/lint/dist/config/eslint'),
 };

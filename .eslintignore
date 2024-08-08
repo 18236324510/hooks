@@ -7,3 +7,7 @@ node_modules/
 **/*.min.js
 **/*-min.js
 **/*.bundle.js
+.prettierrc.js
+dist
+es
+lib
